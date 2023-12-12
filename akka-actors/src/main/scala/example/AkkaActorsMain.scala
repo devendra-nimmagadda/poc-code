@@ -85,9 +85,9 @@ object AkkaActorsMain extends App {
     }
   }
 
-  class SimpleActor extends Actor  {
+  class SimpleActor extends Actor  with ActorLogging {
     override def receive: Receive = {
-      case m: Message => println("Message received ... " + m.msg)
+      case m: Message => log.info("Message received ... " + m.msg)
     }
   }
 
